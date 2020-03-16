@@ -3,7 +3,7 @@ require "http/server"
 
 server = HTTP::Server.new do |context|
   context.response.content_type = "text/plain"
-  context.response.print "hello, you've hit #{context.request.path}"
+  context.response.print "hello, you've hit #{context.request.path}\n"
 end
 
 address = server.bind_tcp "0.0.0.0", 8080
