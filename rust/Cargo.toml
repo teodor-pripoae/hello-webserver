@@ -10,4 +10,4 @@ dropshot = "0.8.0"
 hyper = "0.14.20"
 schemars = "0.8.10"
 serde = "1.0"
-tokio = {version = "1.0", features = ["full"]}
+tokio = {version = "1.23", features = ["full"]}
