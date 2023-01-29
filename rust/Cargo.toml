@@ -1,0 +1,13 @@
+[package]
+edition = "2021"
+name = "hello-webserver"
+version = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+dropshot = "0.8.0"
+hyper = "0.14.20"
+schemars = "0.8.10"
+serde = "1.0"
+tokio = {version = "1.0", features = ["full"]}

@@ -1,4 +1,4 @@
-FROM durosoft/crystal-alpine:0.28.0 as builder
+FROM crystallang/crystal:1-alpine as builder
 WORKDIR /src
 COPY . .
 RUN crystal build --release --static app.cr -o /src/webserver

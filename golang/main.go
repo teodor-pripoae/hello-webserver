@@ -1,9 +1,10 @@
 package main
 
 import (
-    "log"
-    "fmt"
-    "net/http"
+	"fmt"
+	"log"
+	"net/http"
+	"os"
 )
 
 type helloHandler struct{}
@@ -13,6 +14,13 @@ func (h helloHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	err := http.ListenAndServe(":8080", helloHandler{})
-	log.Fatal(err)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+		log.Printf("Defaulting to port %s", port)
+	}
+
+	log.Printf("Starting server on port %s", port)
+	err := http.ListenAndServe(":"+port, helloHandler{})
+ 	log.Fatal(err)
 }
